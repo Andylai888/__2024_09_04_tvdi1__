@@ -5,13 +5,11 @@ students = []
 
 with open('student.csv', encoding='utf-8-sig') as file:
     csv_reader = csv.reader(file)
-    #讀取行標題
+    
     headers = next(csv_reader)
-    #逐行讀取數據
+    
     for row in csv_reader:
-    # print(row)
-        # student.append(row)
-        # 使用zip函數將headers和row配對，轉換成字典
+    
         student_dict = dict(zip(headers,row))
         students.append(student_dict)
  
