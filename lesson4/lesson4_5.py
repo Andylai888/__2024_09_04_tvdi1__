@@ -5,11 +5,17 @@ class Window(ThemedTk):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.title('使用ttk的套件')
-        self.geometry('400x300')
         style = ttk.Style(self)        
-        style.configure('Main.TButton',font=('Arial',15))
-        btn1 = ttk.Button(self,text="Button Demo",style='Main.TButton')
-        btn1.pack(ipadx=10,ipady=10,padx=10,pady=10)
+        topFrame = ttk.Frame(self,borderwidth=1,relief='groove')
+        btn1 = ttk.Button(topFrame,text="按鈕1")
+        btn1.pack(side='left',expand=True,fill='x',padx=10)
+        btn2 = ttk.Button(topFrame,text="按鈕2")
+        btn2.pack(side='left',expand=True,fill='x')
+        btn3 = ttk.Button(topFrame,text="按鈕3")
+        btn3.pack(side='left',expand=True,fill='x',padx=10)
+        topFrame.pack(padx=10,pady=(10,0),ipadx=10,ipady=10,expand=True,fill='x')
+        bottomFrame = ttk.Frame(self,width=500,height=300,borderwidth=1,relief='groove')
+        bottomFrame.pack(padx=10,pady=10)
 
 def main():
     window = Window(theme="arc")
@@ -17,3 +23,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
