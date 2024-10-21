@@ -7,8 +7,8 @@ class Window(ThemedTk):
         self.title('水果大賣場')
         style = ttk.Style(self)
 #=======================strat topframe======================
-        topFrame = ttk.Frame(self,width=300,height=300,borderwidth=3,relief='groove')
-        topFrame.pack(padx=10,pady=(10,0),expand=True,fill='x')
+        topFrame = ttk.Frame(self,borderwidth=1,relief='groove')
+        topFrame.pack(padx=10,pady=(10,0),ipadx=10,ipady=10,expand=True,fill='x')
         btn1 = ttk.Button(topFrame,text='哈密瓜')
         btn1.pack(side='left',expand=True,fill='x',padx=10)
         btn2 = ttk.Button(topFrame,text='葡萄')
