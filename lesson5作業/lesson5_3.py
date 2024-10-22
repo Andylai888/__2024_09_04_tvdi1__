@@ -29,13 +29,13 @@ class Window(ThemedTk):
                 command=self.agreement_changed,
                 variable=self.agreement,
                 onvalue='按三小',
-                offvalue='disagree').pack()
+                offvalue='按三小').pack()
 
         bottomFrame.pack(expand=True,fill='x',padx=20,pady=(0,20),ipadx=10,ipady=10)
         #==============end bottomFrame===============
 
     def agreement_changed(self):
-        showinfo(title='Result',message=self.agreement.get())
+        showinfo(title='< (一 3 一) y__§',message=self.agreement.get())
         
 
 def main():
