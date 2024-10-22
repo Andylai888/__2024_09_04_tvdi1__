@@ -6,7 +6,7 @@ from tkinter.messagebox import showinfo
 class Window(ThemedTk):
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.title('登入')
+        self.title('< (一 3 一) y__§')
         #==============style===============
         style = ttk.Style(self)
         style.configure('TopFrame.TLabel',font=('Helvetica',20))
@@ -15,7 +15,7 @@ class Window(ThemedTk):
         #==============top Frame===============
 
         topFrame = ttk.Frame(self)
-        ttk.Label(topFrame,text='看什麼!快按啊豬頭!',style='TopFrame.TLabel').pack()
+        ttk.Label(topFrame,text='看什麼~快按啊豬頭!',style='TopFrame.TLabel').pack()
         topFrame.pack(padx=20,pady=20)
         
         #==============end topFrame===============
