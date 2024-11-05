@@ -4,13 +4,11 @@ from tkinter import ttk
 import tkinter as tk
 from ttkthemes import ThemedTk
 from tkinter.messagebox import showinfo
-import view
 
 class Window(ThemedTk):
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title('登入')
-        self.resizable(False, False)
         #==============style===============
         style = ttk.Style(self)
         style.configure('TopFrame.TLabel',font=('Helvetica',20))
@@ -26,37 +24,23 @@ class Window(ThemedTk):
 
         #==============bottomFrame===============
         bottomFrame = ttk.Frame(self)
-            #==============SelectedFrame===============        
-        self.selectedFrame= ttk.Frame(self,padding=[10,10,10,10])
-        #combobox選擇城市      
-        counties = datasource.get_county()
-        #self.selected_site = tk.StringVar()
-        self.selected_county = tk.StringVar()
-        sitenames_cb = ttk.Combobox(self.selectedFrame, textvariable=self.selected_county,values=counties,state='readonly')
-        self.selected_county.set('請選擇城市')
-        sitenames_cb.bind('<<ComboboxSelected>>', self.county_selected)
-        sitenames_cb.pack(anchor='n',pady=10)
-
-        self.sitenameFrame = None 
+        sitenames = datasource.get_sitename()
+        self.selected_site = tk.StringVar()
+        sitenames_cb = ttk.Combobox(bottomFrame, textvariable=self.selected_site,values=sitenames,state='readonly')
+        self.selected_site.set('請選擇站點')
+        sitenames_cb.bind('<<ComboboxSelected>>', self.sitename_selected)
+        sitenames_cb.pack(side='left',expand=True,anchor='n')        
         
-        
-
-
-
-        self.selectedFrame.pack(side='left',expand=True,fill='y',padx=(20,0))
-            #==============End SelectedFrame=============== 
-    
         
 
         # define columns
-        columns = ('date', 'county', 'sitename','aqi', 'pm25','status','lat','lon')
+        columns = ('date', 'county', 'aqi', 'pm25','status','lat','lon')
 
         self.tree = ttk.Treeview(bottomFrame, columns=columns, show='headings')
 
         # define headings
         self.tree.heading('date', text='日期')
         self.tree.heading('county', text='縣市')
-        self.tree.heading('sitename', text='站點')
         self.tree.heading('aqi', text='AQI')
         self.tree.heading('pm25', text='PM25')
         self.tree.heading('status',text='狀態')
@@ -65,7 +49,6 @@ class Window(ThemedTk):
 
         self.tree.column('date', width=150,anchor="center")
         self.tree.column('county', width=80,anchor="center")
-        self.tree.column('sitename', width=80,anchor="center")
         self.tree.column('aqi', width=50,anchor="center")
         self.tree.column('pm25', width=50,anchor="center")
         self.tree.column('status', width=50,anchor="center")
@@ -86,37 +69,16 @@ class Window(ThemedTk):
 
             #==============end bottomFrame===============
         
-    def county_selected(self,event):
-        selected = self.selected_county.get()
-        sitenames = datasource.get_sitename(county=selected)
-        #listbox選擇站點
-        if self.sitenameFrame:            
-            self.sitenameFrame.destroy()
-        
-        self.sitenameFrame = view.SitenameFrame(master=self.selectedFrame,sitenames=sitenames,radio_controller=self.radio_button_click)
-        self.sitenameFrame.pack()
-
-
-    
-    def radio_button_click(self,selected_sitename:str):
-        '''
-        - 此method是傳遞給SitenameFrame實體
-        - 當sitenameFrame內的radiobutton被選取時,會連動執行此method
-        Parameter:
-            selected_sitename:str -> 這是被選取的站點名稱
-        '''
-        for children in self.tree.get_children():
-            self.tree.delete(children)        
-        selected_data = datasource.get_selected_data(selected_sitename)
+    def sitename_selected(self,event):
+        selected = self.selected_site.get()
+        selected_data = datasource.get_selected_data(selected)
         for record in selected_data:
             self.tree.insert("", "end", values=record)
 
     
         
- 
 
 def main():
-    datasource.download_data() #下載至資料庫
     window = Window(theme="arc")
     window.mainloop()
 
