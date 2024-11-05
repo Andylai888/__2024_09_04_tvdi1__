@@ -1,5 +1,7 @@
-CREATE TABLE records (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
+sql
+'''
+CREATE TABLE IF NOT EXISTS records (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	sitename TEXT NOT NULL,
 	county TEXT,
 	aqi INTEGER,
@@ -8,5 +10,6 @@ CREATE TABLE records (
 	date TEXT,
 	lat NUMERIC,
 	lon NUMERIC,
-	UNIQUE (date, sitename)
+    UNIQUE (sitename,date)
 );
+'''
