@@ -1,4 +1,4 @@
-iimport datasource
+import datasource
 from tkinter import ttk
 import tkinter as tk
 from ttkthemes import ThemedTk
@@ -128,4 +128,4 @@ def main():
     window.mainloop()
 
 if __name__ == '__main__':
-    main()ij
+    main()
