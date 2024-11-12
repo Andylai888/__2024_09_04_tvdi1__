@@ -1,4 +1,4 @@
-import datasource
+iimport datasource
 from tkinter import ttk
 import tkinter as tk
 from ttkthemes import ThemedTk
@@ -58,7 +58,7 @@ class Window(ThemedTk):
         columns = ('date', 'county', 'sitename','aqi', 'pm25','status','lat','lon')
 
         self.tree = ttk.Treeview(rightFrame, columns=columns, show='headings')
-
+        self.tree.bind('<<TreeviewSelect>>', self.item_selected)
         # define headings
         self.tree.heading('date', text='日期')
         self.tree.heading('county', text='縣市')
@@ -112,6 +112,11 @@ class Window(ThemedTk):
         selected_data = datasource.get_selected_data(selected_sitename)
         for record in selected_data:
             self.tree.insert("", "end", values=record)
+    
+    def item_selected(self,event):
+        for selected_item in self.tree.selection():
+            record = self.tree.item(selected_item)
+            print(record['values'])
 
     
         
@@ -123,4 +128,4 @@ def main():
     window.mainloop()
 
 if __name__ == '__main__':
-    main()
+    main()ij
