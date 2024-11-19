@@ -1,3 +1,6 @@
 requests
 ttkthemes
+pillow
+tkintermapview
+python-dotenv
 
