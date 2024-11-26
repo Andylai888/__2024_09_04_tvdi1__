@@ -17,17 +17,17 @@ class Window(ThemedTk):
         titleFrame = ttk.Frame(self)
         title_label = ttk.Label(self, text="BMI計算器", font=("Arial", 20))
         title_label.pack(pady=10)
-        titleFrame.pack(padx=100,pady=(0,10))
+        titleFrame.pack(padx=100,pady=(0,5))
         
         input_frame = ttk.Frame(self,style='Input.TFrame')
         
-        label_name = ttk.Label(input_frame, text="姓名:")
+        label_name = ttk.Label(input_frame, text="姓名(name):")
         label_name.grid(row=0, column=0, padx=10, pady=10,sticky=tk.E)
 
         self.name_value = tk.StringVar()
         self.name_value.set('')
         entry_name = ttk.Entry(input_frame,textvariable=self.name_value)
-        entry_name.grid(row=0, column=1, padx=10, pady=10)
+        entry_name.grid(row=0, column=1, padx=20, pady=20)
 
        
         label_height = ttk.Label(input_frame, text="身高 (cm):")
@@ -36,7 +36,7 @@ class Window(ThemedTk):
         self.hight_value = tk.StringVar()
         self.hight_value.set('')
         entry_height = ttk.Entry(input_frame,textvariable=self.hight_value)
-        entry_height.grid(row=1, column=1, padx=10, pady=10)
+        entry_height.grid(row=1, column=1, padx=20, pady=20)
 
         label_weight = ttk.Label(input_frame, text="體重 (kg):")
         label_weight.grid(row=2, column=0, padx=10, pady=10,sticky=tk.E)
@@ -44,7 +44,7 @@ class Window(ThemedTk):
         self.weight_value = tk.StringVar()
         self.weight_value.set('')
         entry_weight = ttk.Entry(input_frame,textvariable=self.weight_value)
-        entry_weight.grid(row=2, column=1, padx=10, pady=10)    
+        entry_weight.grid(row=2, column=1, padx=20, pady=20)    
 
         input_frame.pack(pady=50,padx=100)
         
@@ -82,15 +82,15 @@ class Window(ThemedTk):
                 status_color = "red"
                 advice = f"您需要至少增加 {abs(weight_change):.2f} 公斤才不會被風吹走。"
             elif 18.5 <= bmi <= 24.9:
-                status = "正常"
+                status = "唉呦正常喔~給您按個讚!"
                 status_color = "blue"
-                advice = "您的體重正常，請保持！"
+                advice = "您的體重怎麼保持的~教一下吧！"
             else:
-                status = "體重過重"
+                status = "體重過重啦~有那麼好吃嗎?吃的那麼胖!"
                 ideal_weight = 24.9 * (height / 100) ** 2
                 weight_change = weight - ideal_weight
                 status_color = "red"
-                advice = f"您需要至少減少 {abs(weight_change):.2f} 公斤才能達到正常體重。"
+                advice = f"您需要減肥 {abs(weight_change):.2f} 公斤才能再繼續吃。"
 
             CustomMessagebox(self,title="BMI",name=name,bmi=bmi,status=status,advice=advice,status_color=status_color)
             
