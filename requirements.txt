@@ -3,4 +3,5 @@ ttkthemes
 pillow
 tkintermapview
 python-dotenv
-
+pandas
+matplotlib
