@@ -50,3 +50,88 @@ https://youtube.com/live/DCBZMUecqSg
 ##  2024_10_28_下午
 
 https://youtube.com/live/CqUp0kTQm_M
+
+##  2024_11_04_上午
+
+https://youtube.com/live/d4ExC5WNYlU
+
+
+##  2024_11_04_下午
+
+https://youtube.com/live/qRrqh-QuWXM
+
+
+##  2024_11_05_上午
+
+https://youtube.com/live/EPLvdnEcFh4
+
+
+##  2024_11_05_下午
+
+https://youtube.com/live/HWuep4ZkCtU
+
+
+##  2024_11_12__上午
+
+
+https://youtube.com/live/j-h4y22iNzY
+
+
+##  2024_11_13_上午
+
+
+https://youtube.com/live/WpzNpUEuVpw
+
+
+##  2024_11_13_下午
+
+
+https://youtube.com/live/6WG2XmzcxnI
+
+
+##  2024_11_19_上午
+
+https://youtube.com/live/3Q3YjC7w-vQ
+
+
+##  2024_11_19_下午
+
+
+https://youtube.com/live/11reQDv21QM
+
+
+##  2024_11_22_上午
+
+
+https://youtube.com/live/-GdpH7HPQ88
+
+
+##  2024_11_22_下午
+
+
+https://youtube.com/live/SxG9sQ0NHzEG
+
+
+##  2024_11_25_上午
+
+
+https://youtube.com/live/ax06KZoFryI
+
+
+##  2024_11_25_下午
+
+
+https://youtube.com/live/2nWq6ChHT0g
+
+
+##  2024_11_29_上午
+
+
+https://youtube.com/live/ipxzVKxbIhc
+
+
+##  2024_11_29_下午
+
+
+https://youtube.com/live/jxiRppNX2Sk
+
