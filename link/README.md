@@ -135,3 +135,15 @@ https://youtube.com/live/ipxzVKxbIhc
 
 https://youtube.com/live/jxiRppNX2Sk
 
+
+##  2024_12_02_上午
+
+
+https://youtube.com/live/omq9dINycgc
+
+
+
+##   2024_12_02_下午
+
+
+https://youtube.com/live/tGznx9AFx-s
