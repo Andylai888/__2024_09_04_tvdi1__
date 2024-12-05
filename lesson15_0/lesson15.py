@@ -1,4 +1,5 @@
 from flask import Flask,render_template
+import datasource
 
 app = Flask(__name__)
 
@@ -8,7 +9,9 @@ def index():
 
 @app.route("/product")
 def product():
-    return render_template('product.j2')
+    cities:list[dict] = datasource.get_cities()
+    #print(cities)
+    return render_template('product.j2',citys=cities)
 
 @app.route("/pricing")
 def pricing():
