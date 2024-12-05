@@ -31,4 +31,4 @@ def faqs():
 
 @app.route("/about")
 def about():
-    return render_template('about.j2')                      
+    return render_template('about.j2')
