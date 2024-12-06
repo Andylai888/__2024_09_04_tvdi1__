@@ -31,11 +31,11 @@ class MyCustomDialog(Dialog):
             self.status = '危險'
             path = './images/red.png' 
         canvas_left.create_rectangle(10,10,190,190,outline="#9E7A7A",width=2)
-        canvas_left.create_text(100, 40, text=f'AQI3:{self.status}',font=("Helvetica",24,"bold"),fill='#9E7A7A')
+        canvas_left.create_text(100, 40, text=f'AQI:{self.status}',font=("Helvetica",24,"bold"),fill='#9E7A7A')
         self.img = Image.open(path)
         self.green = ImageTk.PhotoImage(self.img)
         canvas_left.create_image(100, 100, anchor='center', image=self.green)
-        canvas_left.create_text(100, 160, text=f'AQI3:{self.aqi}',font=("Helvetica",24,"bold"),fill='#9E7A7A')
+        canvas_left.create_text(100, 160, text=f'AQI:{self.aqi}',font=("Helvetica",24,"bold"),fill='#9E7A7A')
 
         canvas_left.pack(side='left')
 
@@ -91,3 +91,5 @@ class MyCustomDialog(Dialog):
     def cancel(self,evnet=None):
         print("使用者按下cancel")
         super().cancel()
+
+        
