@@ -7,10 +7,6 @@
 <div class="container">
     <form method="POST">
     {{ myform.csrf_token}}
-<<<<<<< HEAD
-    {{ myform.email_field.name }}{{ myform.email_field(size=30) }}
-    {{ myform.password_field.name}} {{myform.password_field(size=50)}}
-=======
     <div class="mb-3">    
     {{ myform.email_field.label(class='form-label') }}{{ myform.email_field(size=30,class='form-control') }}
     </div>
@@ -24,7 +20,6 @@
     {{ myform.submit_field(class='btn btn-primary') }}
     </div>
     
->>>>>>> 2024_12_09分支
     </form>
 </div>
 {% endblock %}

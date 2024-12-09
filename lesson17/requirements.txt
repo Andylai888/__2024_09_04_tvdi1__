@@ -4,8 +4,8 @@ Flask
 pydantic
 gunicorn
 psycopg2-binary
-<<<<<<< HEAD
 Flask-WTF
-=======
-Flask-WTF
->>>>>>> 2024_12_09分支
+dash
+pandas
+plotly
+dash-mantine-components
