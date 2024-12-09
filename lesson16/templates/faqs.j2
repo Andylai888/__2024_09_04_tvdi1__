@@ -1,0 +1,14 @@
+{% extends "_base.j2" %}
+{% block title %}FAQs{% endblock %}
+
+{% block head %} {{super()}} {% endblock%}
+
+{% block main %}
+<div class="container">
+    <form method="POST">
+    {{ myform.csrf_token}}
+    {{ myform.email_field.name }}{{ myform.email_field(size=30) }}
+    {{ myform.password_field.name}} {{myform.password_field(size=50)}}
+    </form>
+</div>
+{% endblock %}
