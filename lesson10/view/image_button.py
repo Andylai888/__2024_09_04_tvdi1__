@@ -8,3 +8,4 @@ class ImageButton(ttk.Button):
         self.icon_photo = ImageTk.PhotoImage(self.icon_image)
         super().__init__(master=master,image=self.icon_photo,**kwargs)
 
+        
