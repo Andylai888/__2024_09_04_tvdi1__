@@ -10,15 +10,49 @@ app = Dash(__name__,external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
     [
-    html.H1("Dash App的標題",style={"textAlign":'center'})
+    
+        dmc.Container(        
+            dmc.Title(f"世界各國人口,壽命,gdp統計數字", order=2),
+            fluid=True,
+            ta='center',
+            my=30  
+        )
     ,
-    dcc.RadioItems(['pop','lifeExp','gdpPercap'],value='pop',inline=True,id='radio_item')
+    #dcc.RadioItems(['pop','lifeExp','gdpPercap'],value='pop',inline=True,id='radio_item')
+    #,
+    #dcc.Dropdown(df.country.unique(),value='Taiwan',id='dropdown-selection')
+    #,
+    #dash_table.DataTable(data=[],page_size=10,id='datatable',columns=[])
+        dmc.Flex(
+            [
+                dmc.Stack(
+                    [
+                        dcc.RadioItems(['pop','lifeExp','gdpPercap'],value='pop',inline=True,id='radio_item')
+                    , 
+                        dcc.Dropdown(df.country.unique(),value='Taiwan',id='dropdown-selection')
+                    ],
+                    w = 300
+                )
+            ,
+                
+                #dash_table.DataTable(data=[],page_size=10,id='datatable',columns=[])
+                dmc.Center(
+                    dash_table.DataTable(data=[],page_size=10,id='datatable',columns=[]),
+                    w = 500
+                )
+
+            ],
+            direction={"base": "column", "sm": "row"},
+            gap={"base": "sm", "sm": "lg"},
+            justify={"base": "center"},
+            
+
+        )
     ,
-    dcc.Dropdown(df.country.unique(),value='Taiwan',id='dropdown-selection')
-    ,
-    dash_table.DataTable(data=[],page_size=10,id='datatable',columns=[])
-    ,
-    dcc.Graph(id='graph-content')
+    #dcc.Graph(id='graph-content')
+        dmc.Container(
+           dcc.Graph(id='graph-content') 
+        )
     ]
 )
 
@@ -66,4 +100,3 @@ def update_table(country_value,radio_value):
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
