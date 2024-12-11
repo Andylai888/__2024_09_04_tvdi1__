@@ -1,6 +1,6 @@
 import requests
 import csv
-import osyy
+import os
 import sys
 import pandas as pd
 
