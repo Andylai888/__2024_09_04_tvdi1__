@@ -14,6 +14,8 @@ radio_data = [['pop','人口'],['lifeExp','平均壽命'],['gdpPercap','人均gd
 #selected要的資料
 selected_data = [{'value':value,'label':value} for value in df.country.unique()]
 
+
+
 app.layout = dmc.MantineProvider(
     [
     
@@ -69,34 +71,59 @@ app.layout = dmc.MantineProvider(
             direction={"base": "column", "sm": "row"},
             gap={"base": "sm", "sm": "lg"},
             justify={"base": "center"},
-            
-
         )
     ,
-    #dcc.Graph(id='graph-content')
+        #dcc.Graph(id='graph-content')
+        # dmc.Container(
+        #    dcc.Graph(id='graph-content') 
+        # )
+     
         dmc.Container(
-           dcc.Graph(id='graph-content') 
+           dmc.LineChart(
+            id = 'lineChart',
+            h=300,
+            dataKey="year",
+            data=None,
+            series = [],
+            curveType="bump",
+            tickLine="xy",
+            withXAxis=True,
+            withDots=True,
+            gridAxis='x',
+            withLegend=True,
+            xAxisLabel='year'
+            ),
+            my=50
         )
+        
     ]
 )
 
 #圖表顯示的事件
 @callback(    
-    Output('graph-content','figure'),
+    Output('lineChart','data'),
+    Output('lineChart','series'),
     Input('dropdown-selection','value'),
     Input('radio_item','value')
-    
 )
 def update_graph(country_value,radio_value):
+    #linechart要的資料
     dff = df[df.country == country_value]
-    if radio_value == "pop":
-        title = f'{country_value}:人口成長圖表'
-    elif radio_value == "lifeExp":
-        title = f'{country_value}:預期壽命'
-    elif radio_value == 'gdpPercap':
-        title = f'{country_value}:人均GDP'
+    pop_diff = dff[['country', 'year', radio_value]]
 
-    return px.line(dff,x='year',y=radio_value,title=title)
+    line_chart_data = pop_diff.to_dict('records')
+    if radio_value == 'pop':
+        label = f'{country_value}:人口'
+    elif radio_value == 'lifeExp':
+        label = f'{country_value}:平均壽命'
+    elif radio_value == 'gdpPercap':
+        label = f'{country_value}人均GDP'
+
+    series = [
+        {"name": radio_value,"label":label ,"color": "indigo.6"} 
+    ]
+
+    return line_chart_data,series
 
 #表格顯示的事件
 @callback(    
