@@ -1,0 +1,27 @@
+requests
+python-dotenv
+Flask
+pydantic
+gunicorn
+psycopg2-binary
+Flask-WTF
+dash
+pandas
+plotly
+dash-mantine-components
+dash-iconify
+numpy
+BeautifulSoup
+tkintermapview
+tkmap
+librosa
+matplotlib
+interact
+FloatSlide
+ipywidgets
+FigureCanvasTkAgg
+ttkthemes
+sklearn.model_selection
+sklearn.tree
+ sklearn.metrics
+ sklearn.ensemble
