@@ -78,3 +78,4 @@ class MyCustomDialog(Dialog):
 
         # 用正確的順序繪製長方形的四個角
         self.ordered_coordinates = [left_bottom, left_top, right_top, right_bottom, left_bottom]
+        

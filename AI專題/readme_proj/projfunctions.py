@@ -80,3 +80,5 @@ INSERT INTO coordinates_test
 (BILL_CODE, x, y)
 VALUES(?, ?, ?);
 '''
+
+

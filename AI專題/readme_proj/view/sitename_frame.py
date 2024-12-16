@@ -28,3 +28,4 @@ class SitenameFrame(ttk.Frame):
     def radio_button_selected(self):
         if self.radio_controller != None:
             self.radio_controller(self.selected_radio.get())
+            

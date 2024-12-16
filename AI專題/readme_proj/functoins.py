@@ -326,3 +326,5 @@ def get_selected_data(district:str)->list[list]:
         address_list = [list(item) for item in cursor.fetchall()]
         return address_list
     
+    
+    
