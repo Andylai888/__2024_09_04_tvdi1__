@@ -4,6 +4,7 @@ import os
 import sys
 import pandas as pd
 
+
 def get_exe_dir():
     """取得執行檔所在的目錄"""
     if getattr(sys, 'frozen', False):  # 是否被 PyInstaller 打包

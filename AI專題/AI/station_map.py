@@ -42,3 +42,4 @@ def update_map(self, district):
         # 添加標記
         if pd.notna(latitude) and pd.notna(longitude):
             self.map_view.set_marker(latitude, longitude, text=station_name)
+            
