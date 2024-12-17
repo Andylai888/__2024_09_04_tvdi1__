@@ -10,7 +10,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 app1 = Dash(__name__,external_stylesheets=dmc.styles.ALL,requests_pathname_prefix="/dash/")
 
 #radio button要顯示的資料
-radio_data = [['pop','人口'],['lifeExp','平均壽命'],['gdpPercap','人均gdp']]
+radio_data = [['pop','人口'],['lifeExp','平均壽命'],['gdpPercap','人均GDP']]
 
 #selected要的資料
 selected_data = [{'value':value,'label':value} for value in df.country.unique()]
@@ -39,7 +39,7 @@ app1.layout = dmc.MantineProvider(
             dmc.AppShellMain(
             [  
                 dmc.Container(        
-                    dmc.Title(f"世界各國人口,壽命,gdp統計數字", order=2),
+                    dmc.Title(f"世界各國人口,壽命,GDP統計數字", order=2),
                     fluid=True,
                     ta='center',
                     my=30  
