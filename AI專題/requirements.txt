@@ -11,17 +11,12 @@ plotly
 dash-mantine-components
 dash-iconify
 numpy
-BeautifulSoup
+BeautifulSoup4
 tkintermapview
-tkmap
 librosa
 matplotlib
 interact
-FloatSlide
 ipywidgets
-FigureCanvasTkAgg
 ttkthemes
-sklearn.model_selection
-sklearn.tree
- sklearn.metrics
- sklearn.ensemble
+scikit-learn
+openpyxl
