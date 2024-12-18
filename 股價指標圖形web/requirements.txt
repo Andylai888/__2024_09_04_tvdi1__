@@ -13,3 +13,4 @@ yfinance
 matplotlib.pyplot
 matplotlib.backends.backend_tkagg
 seaborn
+yfinance
