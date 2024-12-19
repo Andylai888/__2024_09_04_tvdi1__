@@ -1,0 +1,8 @@
+def __init__(self):
+    super().__init__()
+    self.midinnerFrame = tk.Frame(self)  # 先創建 midinnerFrame
+    self.midinnerFrame.pack()
+    
+    # 確保 monthPrice 和 value 的資料有效
+    self.drawMidinner(["項目1", "項目2"])  # 傳一個測試列表，檢查顯示功能是否正常
+    self.midinnerFrame.pack()
